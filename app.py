@@ -21,25 +21,20 @@ def show_predict_page():
     countries = (
         'United States of America',
         'Germany',
-        'United Kingdom of Great Britain and Northern Ireland',
-        'India',
+        'United Kingdom',
+        'Pakistan',
         'Canada',
         'France',
         'Brazil',
         'Spain',
-        'Netherlands',
         'Poland',
         'Australia',
         'Italy',
         'Sweden',
-        'Russian Federation',
+        'Russia',
         'Switzerland',
         'Turkey',
-        'Israel',
-        'Austria',
-        'Portugal',
-        'Norway',
-        'Mexico'
+        
     )
     
     dev_types = (
@@ -76,7 +71,7 @@ def show_predict_page():
     dev_type = st.selectbox("Type of job", dev_types)
     education = st.selectbox("Education Level", education)
     
-    experience = st.slider("Years of experience", 0, 50, 3)
+    experience = st.slider("Years of Experience", 0, 30, 3)
     
     ok = st.button("Calculate Salary")
     
@@ -90,6 +85,6 @@ def show_predict_page():
         salary = regressor.predict(X)
         st.subheader(f"The estimated salary is ${salary[0]:.2f}")
         
-    st.write("""**DISCLAIMER:** The prediction is done using a survey data collected on stackoverflow in 2022 so the estimated salary is with respect to exchange rates at the time of the survey.""")
+    st.write("""**PROJECT BY:** Danish Ijaz Ahmad""")
         
 show_predict_page()
